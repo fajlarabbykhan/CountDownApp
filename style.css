@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/jeremy-bishop-G9i_plbfDgk-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 0 10%;
+    position: relative;
+
+
+}
+
+.header {
+    width: 200px;
+    padding: 20px 0;
+    cursor: pointer;
+    color: white;
+}
+
+.content {
+    top: 40%;
+    position: absolute;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.content h1 {
+    font-size: 64px;
+    font-weight: 600;
+
+}
+
+.content h1 span {
+    color: #FF9933;
+}
+
+.content button {
+    background: transparent;
+    border: 1px solid #FF9933;
+    outline: none;
+    padding: 12px 25px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.time {
+    display: flex;
+
+}
+
+.time div {
+    flex-basis: 100px;
+}
+
+.time div p {
+    font-size: 40px;
+}
+
+.animation {
+    width: 150px;
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    animation: animation 4s linear infinite;
+}
+
+@keyframes animation {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 105%;
+        opacity: 1;
+    }
+}

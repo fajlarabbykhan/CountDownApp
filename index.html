@@ -6,9 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CountDown App</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1 class="header">CountDown</h1>
+        <div class="content">
+            <h3>Wait</h3>
+            <h1>We're <span>Coming</span> Soon</h1>
+            <div class="time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <button type="button">learn More</button>
+        </div>
+        <img src="./images//rocket.png" alt="" class="animation">
+
+    </div>
+    <script>
+        var stopDate = new Date("Sep 30, 2022 00:00:00").getTime();
+        var x = setInterval(function () {
+            var today = new Date().getTime();
+            var distance = stopDate - today;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+
+
+        }, 1000)
+    </script>
 
 </body>
 
